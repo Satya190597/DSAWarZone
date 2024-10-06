@@ -30,81 +30,20 @@ Final Comparison:
 Time Complexity
 The time complexity of the solution can be analyzed as follows:
 
-Splitting Sentences: The sentences are split into words using split(" "). This takes 
-𝑂
-(
-𝑛
-)
-O(n) time, where 
-𝑛
-n is the length of the longer sentence.
+- Splitting Sentences: The sentences are split into words using split(" "). This takes O(n) time, wheren is the length of the longer sentence.
+- Checking Prefix: In the worst case, we may need to iterate through all words of the longer sentence, which takes 
+O(m), where m is the number of words in the longer sentence.
+- Checking Suffix: Similarly, checking the suffix may also take O(m) time.
+- Overall, the dominant operations involve iterating through the longer sentence twice (once for the prefix and once for the suffix). Therefore, the overall time complexity is: O(n+m) Where n is the length of the shorter sentence and 
+m is the length of the longer sentence. Since both lengths are bounded by the length of the input sentences, we can simplify this to O(k), where k is the length of the longer sentence.
 
-Checking Prefix: In the worst case, we may need to iterate through all words of the longer sentence, which takes 
-𝑂
-(
-𝑚
-)
-O(m) time, where 
-𝑚
-m is the number of words in the longer sentence.
-
-Checking Suffix: Similarly, checking the suffix may also take 
-𝑂
-(
-𝑚
-)
-O(m) time.
-
-Overall, the dominant operations involve iterating through the longer sentence twice (once for the prefix and once for the suffix). Therefore, the overall time complexity is:
-
-𝑂
-(
-𝑛
-+
-𝑚
-)
-O(n+m)
-
-Where 
-𝑛
-n is the length of the shorter sentence and 
-𝑚
-m is the length of the longer sentence. Since both lengths are bounded by the length of the input sentences, we can simplify this to 
-𝑂
-(
-𝑘
-)
-O(k), where 
-𝑘
-k is the length of the longer sentence.
-
-Space Complexity
+### Space Complexity
 The space complexity of the solution can be analyzed as follows:
 
 Storage for Word Arrays: We create two arrays to hold the words from the two sentences. The space used for these arrays is proportional to the number of words in each sentence. If the total number of words across both sentences is 
-𝑤
-w, then this part uses 
-𝑂
-(
-𝑤
-)
-O(w) space.
+𝑤, then this part uses **O(w)** space.
 
-Other Variables: The additional space used for pointers and temporary variables is constant, 
-𝑂
-(
-1
-)
-O(1).
+Other Variables: The additional space used for pointers and temporary variables is constant, O(1).
 
-Overall, the dominant factor in space complexity comes from the arrays created to hold the words. Thus, the space complexity is:
-
-𝑂
-(
-𝑤
-)
-O(w)
-
-Where 
-𝑤
-w is the total number of words in both sentences.
+Overall, the dominant factor in space complexity comes from the arrays created to hold the words. Thus, the space complexity is: **O(w)**
+Where **w** is the total number of words in both sentences.
